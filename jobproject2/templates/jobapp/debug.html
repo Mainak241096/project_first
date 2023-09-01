@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Development Job Information</title>
+    <link rel="stylesheet" href="{% static "css/debug.css" %}">
+  </head>
+  <body>
+    <h1>Debug Tester Info</h1><hr>
+    <p>TestComplete includes two debuggers: the keyword test debugger and the script debugger as an aid in developing your keyword tests and scripts. Debugging refers to halting the test execution on a certain keyword test operation or script line and then running through the test in step with the execution, stopping on operations or script lines. Every time the debugger stops somewhere, there are several things it will allow you to do, such as to check or change the values of variables. However, merely stopping before certain operations or lines is often a great help in tracking what your test is doing.</p>
+    <img src="{% static "images/debugtester/1.jpg" %}" alt="">
+    <img src="{% static "images/debugtester/2.jpg" %}" alt="">
+    <img src="{% static "images/debugtester/3.jpg" %}" alt="">
+    <img src="{% static "images/debugtester/4.jpg" %}" alt="">
+
+    {% if jobs_list %}
+    <table>
+        <thead>
+            <th>Date</th>
+            <th>Company</th>
+            <th>Title</th>
+            <th>Eligibility</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </thead>
+        {% for job in jobs_list %}
+        <tr>
+          <td>{{job.date}}</td>
+          <td>{{job.company}}</td>
+          <td>{{job.title}}</td>
+          <td>{{job.eligibility}}</td>
+          <td>{{job.address}}</td>
+          <td>{{job.email}}</td>
+          <td>{{job.phonenumber}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+      {% else %}
+        <p id='not'>No Data Found!</p>
+  {% endif %}
+  </body>
+</html>

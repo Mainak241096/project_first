@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Software Jobs</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "css/jobstyle.css" %}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Welcome to Job Portal</h1>
+        <p><u>click below buttons to get information</u></p>
+        <a class="btn btn-outline-primary btn-lg" href="/access/development" role="button" target="_blank">Development Jobs</a>&nbsp,&nbsp;
+        <a class="btn btn-outline-success btn-lg" href="/access/debug" role="button" target="_blank">DebugTester Jobs</a>&nbsp,&nbsp;
+        <a class="btn btn-outline-dark btn-lg" href="/access/hacking" role="button" target="_blank">Hacking Jobs</a>
+      </div>
+    </div>
+  </body>
+</html>

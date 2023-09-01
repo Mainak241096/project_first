@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Development Job Information</title>
+    <link rel="stylesheet" href="{% static "css/hacking.css" %}">
+  </head>
+  <body>
+    <h1>Hacking Info</h1><hr>
+    <p>Hacking refers to activities that seek to compromise digital devices, such as computers, smartphones, tablets, and even entire networks. And while hacking might not always be for malicious purposes, nowadays most references to hacking, and hackers, characterize it/them as unlawful activity by cybercriminals—motivated by financial gain, protest, information gathering (spying), and even just for the “fun” of the challenge.Hacking is typically technical in nature (like creating malvertising that deposits malware in a drive-by attack requiring no user interaction). But hackers can also use psychology to trick the user into clicking on a malicious attachment or providing personal data. These tactics are referred to as “social engineering.”
+
+In fact, it's accurate to characterize hacking as an over-arching umbrella term for activity behind most if not all of the malware and malicious cyberattacks on the computing public, businesses, and governments.</p>
+    <img src="{% static "images/hacking/1.jpg" %}" alt="">
+    <img src="{% static "images/hacking/2.jpg" %}" alt="">
+    <img src="{% static "images/hacking/3.jpg" %}" alt="">
+    <img src="{% static "images/hacking/5.jpg" %}" alt="">
+
+    {% if jobs_list %}
+    <table>
+        <thead>
+            <th>Date</th>
+            <th>Company</th>
+            <th>Title</th>
+            <th>Eligibility</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </thead>
+        {% for job in jobs_list %}
+        <tr>
+          <td>{{job.date}}</td>
+          <td>{{job.company}}</td>
+          <td>{{job.title}}</td>
+          <td>{{job.eligibility}}</td>
+          <td>{{job.address}}</td>
+          <td>{{job.email}}</td>
+          <td>{{job.phonenumber}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+      {% else %}
+        <p id='not'>No Data Found!</p>
+  {% endif %}
+  </body>
+</html>
